@@ -5,3 +5,6 @@ Release/
 .launch
 .cproject
 .project
+/build
+*.o
+.ccls-cache
