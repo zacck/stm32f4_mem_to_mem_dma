@@ -12,31 +12,27 @@
  * This software is licensed under terms that can be found in the LICENSE file
  * in the root directory of this software component.
  * If no LICENSE file comes with this software, it is provided AS-IS.
- *
+ *L
  ******************************************************************************
  */
 
-#include "main.h"
 
-//for print f
-#include <stdio.h>
+#include <stdint.h>
+#include "stm32f4xx.h"
 
 #define BLUE_LED_PORT GPIOD
 #define BLUE_LED_PIN 15
 
 
-
-void delay(void){
-	for(uint32_t i = 0; i < 500000/2; i ++);
+void _init(void){
+	//dummy
 }
+
 
 
 
 int main(void)
 {
-	printf("System booted with Default clock\n");
-	delay();
-
 	//Turn on Blue LED with pure CMSIS
 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
 
@@ -48,30 +44,10 @@ int main(void)
 	GPIOD->PUPDR &= ~GPIO_PUPDR_PUPDR15_0;
 	GPIOD->PUPDR &= ~GPIO_PUPDR_PUPDR15_1;
 
-	delay();
 
-	printf("GPIO D setup and now will turn on blue LED \n");
 
 
 	GPIOD->BSRR |= GPIO_BSRR_BS_15;
-
-	printf("Blue LED is now ON\n");
-
-	delay();
-	delay();
-	delay();
-
-	printf("GPIO D setup will turn off blue LED\n");
-
-	GPIOD->BSRR |= GPIO_BSRR_BR_15;
-
-	printf("Blue LED is now OFF\n");
-
-
-
-
-
-
 
 
     /* Loop forever */
