@@ -10,7 +10,7 @@ CFLAGS = -mcpu=cortex-m4 -mthumb -Wall -g -O2 \
          -ICMSIS/Include \
          -ICMSIS/Device/ST/STM32F4xx/Include
 
-LDFLAGS = -T STM32F407VGTX_FLASH.ld -nostdlib -Wl,--gc-sections -Wl,-Map=build/blink.map \
+LDFLAGS = -T STM32F407VGTX_FLASH.ld -nostdlib -Wl,--gc-sections -Wl,-Map=build/m2mdma.map \
           -nostartfiles -nodefaultlibs  # Disable default startup and libc
 
 # Source files
@@ -23,8 +23,8 @@ OBJS = $(patsubst %.c, build/%.o, $(filter %.c,$(SRCS))) \
        $(patsubst %.s, build/%.o, $(filter %.s,$(SRCS)))
 
 # Output
-TARGET = build/blink.elf
-BIN = build/blink.bin
+TARGET = build/m2mdma.elf
+BIN = build/m2mdma.bin
 
 # Default target
 all: $(BIN)
