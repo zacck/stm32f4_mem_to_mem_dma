@@ -78,7 +78,7 @@ void DMA2_Stream0_IRQHandler(void)
 		DMA2->LIFCR = DMA_LIFCR_CTCIF0;
 		DMA2_Stream0->CR &= ~DMA_SxCR_EN;
 
-		if(destBuffer[20] == srcBuffer[21]) {
+		if(destBuffer[20] == srcBuffer[20]) {
 			GPIOD->BSRR |= GPIO_BSRR_BS_13;
 		}
 	}
