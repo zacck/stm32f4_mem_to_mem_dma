@@ -8,3 +8,4 @@ Release/
 /build
 *.o
 .ccls-cache
+.ccls
