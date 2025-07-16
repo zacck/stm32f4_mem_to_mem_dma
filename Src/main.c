@@ -38,7 +38,6 @@ int main(void)
 	DMA2_Stream0->CR = 0;
 	while (DMA2_Stream0->CR & DMA_SxCR_EN);
 
-	//TODO should wait until we get a signal	
 	DMA2_Stream0->CR |= (0x2 << DMA_SxCR_DIR_Pos);
 	DMA2_Stream0->CR |= (0x2 << DMA_SxCR_MSIZE_Pos);
 	DMA2_Stream0->CR |= (0x2 << DMA_SxCR_PSIZE_Pos);
